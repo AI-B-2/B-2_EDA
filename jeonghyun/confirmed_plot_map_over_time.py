@@ -15,11 +15,11 @@ init_notebook_mode(connected=True)
 full_grouped = pd.read_csv('full_grouped.csv')
 full_grouped["Date"].dt.strftime('%Y-%m-%d')
 
-def confirmed_over_time(df, frame):
+def confirmed_over_time():
     df= pd.read_csv('full_grouped.csv')
     df["Date"].dt.strftime('%Y-%m-%d')
     frame = df["Date"].dt.strftime('%Y-%m-%d')
-    
+
     fig = px.choropleth(df, locations="Country/Region", 
                     color=np.log(df["Confirmed"]),
                     locationmode='country names', hover_name="Country/Region", 
